@@ -20,7 +20,7 @@ BLACK_IMAGE_PATH = os.path.join(IMAGE_DIR, 'black-mask.png')
 BLUE_IMAGE_PATH = os.path.join(IMAGE_DIR, 'blue-mask.png')
 RED_IMAGE_PATH = os.path.join(IMAGE_DIR, 'red-mask.png')
 SKIN_IMAGE_PATH = os.path.join(IMAGE_DIR, 'skin-mask.png')
-CROPE_SIZE = 128
+CROPE_SIZE = 112
 
 def rect_to_bbox(rect):
     """获得人脸矩形的坐标信息"""
@@ -224,7 +224,7 @@ class FaceMasker:
 
 if __name__ == '__main__':
 
-    dataset_path ='./CASIA-WebFace'
+    dataset_path ='./casia_webface_112x112'
     save_dataset_path = './webface_masked'
     #dataset_path = './lfw'
     #save_dataset_path = './lfw_masked'

@@ -224,8 +224,8 @@ class FaceMasker:
 
 if __name__ == '__main__':
 
-    dataset_path ='./casia_webface_112x112'
-    save_dataset_path = './webface_masked'
+    dataset_path ='../casia_webface_112x112'
+    save_dataset_path = '../webface_masked'
     #dataset_path = './lfw'
     #save_dataset_path = './lfw_masked'
     unmasked_paths=[]

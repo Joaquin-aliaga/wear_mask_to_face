@@ -75,7 +75,8 @@ def cli(pic_path ,save_pic_path):
     if not os.path.exists(pic_path):
         print(f'Picture {pic_path} not exists.')
         sys.exit(1)
-    mask_path = SKIN_IMAGE_PATH
+    #mask_path = SKIN_IMAGE_PATH
+    mask_path = DEFAULT_IMAGE_PATH
 
     unmasked_paths = FaceMasker(pic_path, mask_path, True, 'cnn',save_pic_path).mask()
     return unmasked_paths

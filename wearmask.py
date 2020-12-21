@@ -95,8 +95,13 @@ class FaceMasker:
 
     def mask(self):
         
-
-        face_image_np = face_recognition.load_image_file(self.face_path)
+        unmasked_paths = []
+        try:  
+            face_image_np = face_recognition.load_image_file(self.face_path)
+        except:
+            print("Error al intentar cargar imagen: ",self.face_path)
+            unmasked_paths.append(self.save_path)
+            return unmasked_paths
         face_locations = face_recognition.face_locations(face_image_np, model=self.model)
         face_landmarks = face_recognition.face_landmarks(face_image_np, face_locations)
         self._face_img = Image.fromarray(face_image_np)
@@ -120,7 +125,7 @@ class FaceMasker:
             found_face = True
             self._mask_face(face_landmark)
 
-        unmasked_paths = []
+        #unmasked_paths = []
 
         if found_face:
             # align
